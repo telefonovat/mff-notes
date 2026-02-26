@@ -232,3 +232,5 @@ Remark on 7: this schema won't be this useful for this class. It is used in more
 Remark: Schema of replacement implies schema of separation. Substitute $\mathcal{P}(n) \wedge u=v$ in replacement.(Proof as an exercise)
 
 ### Blackboard images
+
+[Download Lecture 2 (PDF)](set_theory_lecture_02.pdf)

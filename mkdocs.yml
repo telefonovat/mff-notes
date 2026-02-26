@@ -2,7 +2,7 @@ site_name: My Docs
 nav:
   - Home: index.md
   - Set Theory:
-      - Lecture 2: set-theory-lecture-2.md
+      - Lecture 2: set-theory/set_theory_lecture_02.md
 
 theme:
   name: dracula
