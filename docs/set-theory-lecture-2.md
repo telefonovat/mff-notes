@@ -1,0 +1,234 @@
+## Lecture 2
+
+### Table of contents
+
+- [Intro](#intro)
+- [Axioms](#axioms)
+- [Blackboard images](#blackboard-images)
+
+### Intro
+
+### Axioms
+
+The most commonly used set of axioms is Zermelo-Frankel which includes 7 axioms and 2 schematas. This is not minimal. 2 axioms and 1 schemata can be derived from others.
+
+Often we add the axiom of choice to this set and call it the ZFC axioms.
+
+#### 1. Axiom of existence
+
+$$
+(\exists x) (x = x)
+$$
+
+"A set exists"
+Note that we cannot just write $(\exists x )$ as it is not a valid formula.
+
+#### 2. Axiom of existensionality
+
+$$
+(\forall z)((z \in x \iff z \in y) \implies (x = y))
+$$
+
+This is a connection between $=$ & $\in$. It says that a set is determined by its elements and that if 2 sets have the same elements, they are equal.
+
+Exercise: Prove that $((x \subseteq y) \wedge(y \subset z)) \implies (x \subset z)$
+
+
+#### 3. Axiom Schema of Separation/Comprehension
+
+If $\rho(x)$ is a formula that does not contain $z$ as a free variable, then
+
+$$
+(\forall a)(\exists z)(\forall x)(x \in z \iff (x \in a \wedge \rho(x)))
+$$
+
+Here, by schema, we mean that infinitely many axioms exist - one for each formula $\rho(x)$. This axiom schema denotes "selection of all elements from a with property $\rho(x)$ creates a new set z".
+
+Also by extensionality, this set is uniquely determined. Prove it!
+
+Now we establish notation for this kind of set.
+
+$$
+\{x | x \in a \wedge \rho(x)\}
+$$
+
+Or even shorter,
+
+$$
+\{x \in a | \rho(x)\}
+$$
+
+Moreover, by using axiom 3, we can define
+##### Intersection
+
+$$
+a \cap b = \{x | x \in a \wedge x \in b\}
+$$
+
+This is obtained by simply substituting $x \in b$ as $\rho(x)$ in 3.
+
+##### Set difference
+
+$$
+ a - b = \{ x| x\in a \wedge x  b\}
+$$
+
+This is obtained similarly as above by 3.
+
+##### The empty set
+
+$$
+\phi = \{x | x \in a \wedge x \neq x\}
+$$
+
+where a is arbitrary.
+
+Note that we can also say $\phi = \{x | x \in a \wedge x \notin a\}$.
+We just need a contradiction.
+
+The empty set can be proven to be unique by extensionality.
+
+Exercise: Write down using a formula that "A set a has exactly 1 element"
+
+#### 4. Axiom of a pair(or pairing)
+
+$$
+(\forall a)(\forall b)(\exists z)(\forall x)(x \in z \iff (x = a \vee x = b))
+$$
+
+This says that for every set $a, b$, $\exists z$ whose elements are exactly $a, b$.
+z is unique.(Proof?)
+
+Let us introduce more notation. We define an unordered pair of sets $a,b$ as $\{a,b\}$.
+If $a \neq b$, it is a two-element set. Otherwise $\{a\} = \{a, a\}$. In other words, a 1-element set.
+
+As an example, we can create iteratively $\{\phi\}, \{\{\phi\}\}, \{\{\{\phi\}\}\}, \{\phi, \{\phi\}\}$, etc
+
+Exercise: Prove that $(\forall z)((x \in z \iff y \in z) \implies (x = y))$
+
+##### Ordered pairs
+
+Denotes as $(a,b)$ or $<a,b>$, we define it as the set ${{a}, {a,b}}$.
+So, for $<b,a>$, we have ${{b}, {a,b}}$.
+
+It is a good exercise to think about why we define it this way and not as ${a, {a,b}}$.
+
+Remark: If a = b, then $(a,a) = {{a},{a,a}} = {{a},{a}} = {{a}}$.
+
+We should still verify that operations with ordered pairs behave the way we expect them to.
+
+Lemma: $(x,y) = (u,v) \iff (x=y \wedge y=v)$
+
+Proof: (\impliedby)
+
+If $x = u$, then $\{x\} = \{u\}$.(Why? By extensionality.)
+
+Similarly, $\{x,y\} = \{u,v\}$.
+
+So we can conclude that $\{\{x\},\{x,y\}\} = \{\{u\},\{u,v\}\}$
+
+Note that in each of the 3 steps above, we apply extensionality.
+
+(\implies)
+
+Start with $\{\{x\}, \{x,y\}\} = \{\{u\}, \{u,v\}\}$
+
+Then $\{x\} = \{u\}$ or $\{x\} = \{u,v\}$. (Why?)
+
+In both cases, $x = u$ (Details?)
+
+So, $\{u,v\} = \{x\}$ or $\{u,v\} = \{x, y\}$
+
+So $v=x$ or $v=y$.
+
+If $v=x$, as $u=x$, we have $v=u=x=y$.
+
+If $v=y$, we are done.
+
+##### Ordered n-tuples
+
+This brings us to another definition.
+If $a_1,a_2,...,a_n$ are sets, we define ordered n-tuple $(a_1,a_2,...,a_n)$ recursively as follows.
+
+Let $(a_1) := a_1$
+
+If $(a_1,...,a_k)$ is defined, then $(a_1,...,a_k+1):=((a_1,...,a_k), a_{k+1})$
+
+For this definition, we can prove a similar lemma as above. In other words,
+
+$$
+(a_1,...,a_n) = (b_1,...,b_n) \iff (a_1=b_1 \wedge ... \wedge a_n=b_n)
+$$
+
+The proof is an exercise.
+
+#### 5. Axiom of union
+
+$$
+(\forall a)(\exists z)(\forall x)(x \in \iff (\exists y)(x \in y \wedge y \in a))
+$$
+
+This gives us another definition.
+
+$\cup a := \{x | (\exists y)(x \in y \wedge y \in a)\}$
+
+In words, "the union of the set a".
+
+Observation: If $a =\{b,c\}$, then $\cup a = \cup \{b,c\} = \{x| x \in b \vee x \in c\}$.
+In other words, "the union of two sets".
+
+Remark: note that the two $\cup$ operators above have different parities. The first one is unary and the second one binary.
+
+##### Unordered n-tuple
+
+If $a_1, ..., a_n$ are sets, we define the unordered n-tuple as below.
+
+Assume that all $a_i$ are pairwise distinct.
+Define recursively:
+
+If $\{a_1,...,a_k\}$ is defined then $\{a_1,...,a_k+1\}$ is $\{a_1,...,a_k\} \cup \{a_k+1\}$
+
+Remark: This union is still not enough to construct cartesian products. This leads us to our next axiom.
+
+#### 6. Axiom of power set
+
+$$
+(\forall a)(\exists z)(\forall x)(x \in z \iff x \subseteq a) 
+$$
+
+In words, "there exists a set whose elements are exactly the subsets of a".
+
+##### Power set
+
+$\mathcal{P}(a)$ is defined as $\{x | x \subseteq a\}$. This is called the power set.
+
+Remark: This axiom is useful as applying the power set on infinite sets somehow allow "larger" infinities.
+
+Now, some examples.
+
+$\mathcal{P}(\phi) = \{\phi\}$
+$\mathcal{P}({\phi}) = \{\phi, \{\phi \}\}$
+            
+Exercise: Iterate this process even more.
+
+One useful t  rick is to use the fact that for finite sets, the size of the power set is a power of 2 to check your answer.
+
+The power set is sometimes denoted as $2^a$ for some set a.
+
+Exercise: What can we say about the relationship beween $\cup \mathcal{P}(a)$ & $\mathcal{P}(\cup a)$?(In comparison with a)
+
+#### 7. Axiom schema of replacement
+
+"The image of a set by a function is a set".
+
+If $\psi(u,v)$ is a formula that does not contain $w,z$ as a free variable,
+
+$$
+(\forall u)(\forall v)(\forall w)(((\psi(u,v) \wedge \psi(u,w) \implies v=w)\implies ((\forall a)(exists z)(\forall v)(v \in z \iff (\exists z)(u \in a \wedge \psi(u,v))))))
+$$
+
+Remark on 7: this schema won't be this useful for this class. It is used in more advanced proofs.
+
+Remark: Schema of replacement implies schema of separation. Substitute $\mathcal{P}(n) \wedge u=v$ in replacement.(Proof as an exercise)
+
+### Blackboard images
