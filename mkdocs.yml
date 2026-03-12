@@ -3,6 +3,8 @@ nav:
   - Home: index.md
   - Set Theory:
       - Lecture 2: set-theory/set_theory_lecture_02.md
+      - Lecture 3: set-theory/set_theory_lecture_03.md
+      - Lecture 4: set-theory/set_theory_lecture_04.md
 
 theme:
   name: dracula
