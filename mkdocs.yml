@@ -2,9 +2,10 @@ site_name: My Docs
 nav:
   - Home: index.md
   - Set Theory:
-      - Lecture 2: set-theory/set_theory_lecture_02.md
-      - Lecture 3: set-theory/set_theory_lecture_03.md
-      - Lecture 4: set-theory/set_theory_lecture_04.md
+      - Lecture 2: set-theory/lecture-02.md
+      - Lecture 3: set-theory/lecture-03.md
+      - Lecture 4: set-theory/lecture-04.md
+      - Lecture 5: set-theory/lecture-05.md
 
 theme:
   name: dracula
