@@ -245,6 +245,13 @@ It is not a strict ordering as it is not anti-reflexive.</p>
 <p>If <span class="arithmatex">\(x \in A\)</span>, then <span class="arithmatex">\((\leftarrow, x ]\)</span> is <span class="arithmatex">\(\{y; y \in A \wedge y \leq_{R} x\}\)</span>
 This is called the principal ideal determined by <span class="arithmatex">\(x\)</span>/</p>
 <p>Observation: If <span class="arithmatex">\(R\)</span> is an ordering on a class <span class="arithmatex">\(A\)</span>, then for arbitrary <span class="arithmatex">\(x,y \in A\)</span>, we have <span class="arithmatex">\(x \leq_{R} y \leftrightarrow (\leftarrow, x] \subseteq (\leftarrow, y]\)</span></p>
+<p>Remark: We can construct <span class="arithmatex">\(\mathbb{R}\)</span> from <span class="arithmatex">\(\mathbb{Q}\)</span> by so-called "Dedekind" cut</p>
+<p>If <span class="arithmatex">\(X \subseteq \mathbb{Q}\)</span>, <span class="arithmatex">\(X\)</span> is a lower set and if <span class="arithmatex">\(sup(X)\)</span> exists, then <span class="arithmatex">\(sup(X) \in X\)</span>.</p>
+<p>For instance, <span class="arithmatex">\(\mathbb{Q} \cap (- \infty, 1)\)</span> is not a dedekind cut but <span class="arithmatex">\(\mathbb{Q} \cap (- \infty, 1]\)</span> is a dedekind cut.
+<span class="arithmatex">\(\mathbb{Q} \cap (- \infty, \sqrt{2})\)</span> is a dedekind cut and this can be written as <span class="arithmatex">\(\{x; x \in \mathbb{Q}, x^2 \leq 2 \wedge x \leq 0\}\)</span></p>
+<p>Definition: An ordering <span class="arithmatex">\(R\)</span> on a class <span class="arithmatex">\(A\)</span> is a well-ordering iff every non-empty subset of A has a smallest element with respect to <span class="arithmatex">\(R\)</span>.</p>
+<p>Exercise: Write this definition using a formula!</p>
+<p>Observation: Well-ordering is a hereditary condition, that is if <span class="arithmatex">\(B \subset eq\)</span>, <span class="arithmatex">\(R\)</span> is a well-ordering on <span class="arithmatex">\(B\)</span>.</p>
 <p>Remark: Do well-ordering and linear-ordering imply one another?
 No, there are linear orderings which are not well-ordered but every well-ordering is a linear-ordering.(Proof?)</p>
 <p>For example,</p>
